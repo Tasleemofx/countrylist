@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+li{
+  list-style-type: none;
+  margin: 1em auto;
+  padding: 0.3em;
+  max-width: max-content;
+  border: 3px solid rgb(139, 139, 139);
+  border-radius: 10px;
+  box-shadow: 10px black;
+  text-align: center;
+}
+li:hover{
+    background-color: burlywood;
+    color: white;
+    border: 3px solid white;
+    }
+img{
+  height: 200px;
+  width: 300px;
+}
+
+@media screen and (max-width: 500px){
+  img{
+  height: 30vh;
+  width: 70vw;
+}
+
+}
+
+@keyframes changelist{
+  from{
+      background-color: white;
+      color: black;
+      border: 3px solid rgb(139, 139, 139); 
+  }
+  to{
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+  }
+}
+
