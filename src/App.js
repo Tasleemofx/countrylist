@@ -6,21 +6,19 @@ import Filterform from './components/Filterform';
 
 function App() {
   const [countries, setCountries] = useState()
-
-  let countrylist = useEffect(() => axios
+  let query;
+  useEffect(() => axios
     .get("https://restcountries.eu/rest/v2/all")
     .then(response => {
       setCountries(response.data)
-      return response.data
-    }),[]
+    }),[query]
     )
     
   const handleChange = (e) => {
+    query = e.target.value
     if(e.target.value){
-    const countriesToShow = countries.filter(country => country.name.toLowercase().startsWith(e.target.value));
+    const countriesToShow = countries.filter(country => country.name.startsWith(e.target.value));
     setCountries(countriesToShow)
-    }else{
-      setCountries(countrylist)
     }
   }
 
