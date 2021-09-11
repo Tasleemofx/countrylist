@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+ul{
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
 li{
   list-style-type: none;
   margin: 1em auto;
@@ -26,7 +30,9 @@ img{
   height: 30vh;
   width: 70vw;
 }
-
+ul{
+  display: flex;
+}
 }
 
 @keyframes changelist{

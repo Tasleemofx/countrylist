@@ -17,7 +17,7 @@ function App() {
     
   const handleChange = (e) => {
     if(e.target.value){
-    const countriesToShow = countries.filter(country => country.name.startsWith(e.target.value));
+    const countriesToShow = countries.filter(country => country.name.toLowercase().startsWith(e.target.value));
     setCountries(countriesToShow)
     }else{
       setCountries(countrylist)
