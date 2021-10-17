@@ -32,7 +32,7 @@ function App() {
  if(countries){
   return (
     <div className="App">
-      <h1>Countries and Capitals</h1>
+      <h1>Where in the world?</h1>
       <Filterform onChange={handleChange}/>
       <Country list={countries}/>
     </div>
