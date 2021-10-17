@@ -2,7 +2,7 @@
   height: 30vh;
   width: 70vw;
 }
-ul{
+ul li{
   display: flex;
   flex-direction: column;
 }
@@ -25,8 +25,21 @@ li:hover{
     color: white;
     border: 3px solid white;
     }
-
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
+img{
+  height: 30vh;
+  width: 40vw;
+}
+ul{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+.App{
+  text-align: center;
+}
+}
+@media screen and (min-width: 1024px) {
 img{
   height: 200px;
   width: 300px;

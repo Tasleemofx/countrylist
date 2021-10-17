@@ -5,22 +5,29 @@ import Country from './components/Country';
 import Filterform from './components/Filterform';
 
 function App() {
-  const [countries, setCountries] = useState()
-  let query;
+  const [refresh, setRefresh] = useState(false)
+  const [countries, setCountries] = useState([])
   useEffect(() => axios
-    .get("https://restcountries.eu/rest/v2/all")
+    .get(`https://restcountries.com/v3.1/all`)
     .then(response => {
-      setCountries(response.data)
-    }),[query]
+      let newData = response.data;
+      setCountries(newData)
+      console.log()
+    }),[refresh]
     )
     
   const handleChange = (e) => {
-    query = e.target.value
-    if(e.target.value){
-    const countriesToShow = countries.filter(country => country.name.startsWith(e.target.value));
+    if(e.target.value!==""){
+
+    const countriesToShow = countries
+    .filter(country => 
+      country.name.common.toLowerCase()
+      .startsWith(e.target.value.toLowerCase()));
     setCountries(countriesToShow)
-    }
+    }else{
+      setRefresh(!refresh)
   }
+}
 
  if(countries){
   return (
